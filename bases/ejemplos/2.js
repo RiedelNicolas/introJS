@@ -1,5 +1,10 @@
 // Estructuras de control.
 
+//Los argumentos son : 
+
+console.log(process.argv)
+
+
 //Ejemplo de IF, ingresa tu edad como primer argumento
 
 console.log("Ejemplo de if");

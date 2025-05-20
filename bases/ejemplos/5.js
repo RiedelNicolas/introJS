@@ -24,3 +24,19 @@ function saludar() {
     console.log("Hola " + nombre_bis);
 }
 saludar();
+
+//Mutables: let y var => Tiene un background historico.
+ // Originalmente solo existia var
+ // Luego llegaron let y const.
+
+//No-mutables: const => No hay sorpresas.
+
+// Usamos let y const.
+
+
+const procedimiento = () => {
+    console.log("hola")
+}
+
+let retorno = procedimiento
+console.log("valor de retorno", retorno())

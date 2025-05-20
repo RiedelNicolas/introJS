@@ -18,8 +18,10 @@ console.log("Juan > Pedro", "Juan" > "Pedro");
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 console.log("array", array);
 
+console.log("array.lenght", array.length)
 
-const soloPares = array.filter((elemento) => elemento % 2 === 0);
+
+const soloPares = array.filter((x) => x % 2 === 0);
 console.log("solo_pares", soloPares);
 
 
@@ -29,3 +31,4 @@ console.log("cantidad_de_pares", cantidadDePares);
 
 const arrayMultiplicadoPorDos = array.map((elemento) => elemento * 2);
 console.log("array_multiplicado_por_dos", arrayMultiplicadoPorDos);
+console.log("arrayOriginal",array)
