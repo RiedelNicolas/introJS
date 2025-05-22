@@ -29,10 +29,6 @@ Ejercicio 2:
 Implementar una funcion que reciba un numero(n) y una lista de alumnos. Debe devolver los primeros n alumnos de la lista
 
 
-
-
-
-
 7. Promesas y async/await
 
 

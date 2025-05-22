@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="textoACambiar">Hola chicos!</h1>
+    <button id="boton_cambiador">Cambiar el color!</button>
+
+    <script>
+        const button = document.querySelector('#boton_cambiador');
+        const text = document.querySelector('#textoACambiar');
+
+        button.addEventListener('click', () => {
+            text.style.color = "blue";
+        });
+    </script>
+</body>
+</html>
