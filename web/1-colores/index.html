@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Simple Page</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            flex-direction: column;
-        }
-        button {
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-    <h1 id="textoACambiar">Hola chicos!</h1>
-    <button id="boton_cambiador">Cambiar el color!</button>
-
-    <script>
-        const button = document.querySelector('#boton_cambiador');
-        const text = document.querySelector('#textoACambiar');
-
-        button.addEventListener('click', () => {
-            text.style.color = "blue";
-        });
-    </script>
-</body>
+    <head>
+        <title>Simple Page</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                flex-direction: column;
+            }
+            #boton_cambiador {
+                margin-top: 20px;
+                border-radius: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="textoACambiar">Hola chicos!</h1>
+        <h1>Como estan?</h1>
+        <h1>Esta es la clase de intro con más frio hasta ahora</h1>
+        <button id="boton_cambiador">Cambiar el color!</button>
+        <script>
+            const botonBuscado = document.querySelector("#boton_cambiador");
+            botonBuscado.addEventListener("click",() => {
+                const nuevosEstilos = document.createElement("style");
+                console.log("nuevosEstilos", nuevosEstilos)
+                nuevosEstilos.innerHTML=`
+                    h1  {
+                     color: red
+                    }
+                `
+                document.head.append(nuevosEstilos)
+            })
+        </script>
+    </body>
 </html>

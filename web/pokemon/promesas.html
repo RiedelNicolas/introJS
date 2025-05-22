@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pokedex</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+            .inputNumerico {
+                margin-bottom: 20px;
+            }
+            #imagenPokemon{
+                width: 400px;
+                height: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="input-container">
+            <input type="number" id="inputNumerico" placeholder="Ingresa un nubero">
+            <button id="addButton">Buscar Pokemon</button>
+
+            <h1 id="tituloPokemon">
+
+            </h1>
+
+            <img id="imagenPokemon">
+
+        </div>
+        <Script>
+
+            const pokemonURL = "https://pokeapi.co/api/v2/pokemon/";
+
+            const GetPokemon = (numeroABuscar) => {
+                return fetch(pokemonURL + numeroABuscar)
+            }
+
+            const addButton = document.querySelector('#addButton');
+            const inputNumerico = document.querySelector('#inputNumerico');
+            const tituloPokemon = document.querySelector('#tituloPokemon');
+            const imagenPokemon = document.querySelector('#imagenPokemon')
+            addButton.addEventListener("click", (e) => {
+                const pokemonABuscar = inputNumerico.value
+                   //Ejemplo con promesas
+                    GetPokemon(pokemonABuscar).then((response)=> {
+                        return response.json();
+                    }).then((data) => {
+                        tituloPokemon.innerHTML = data.species.name
+                        imagenPokemon.src = data.sprites.front_default;
+                        console.log(data.species.name)
+                        // data.species.name;
+                    }).catch( (error) => {
+                        console.log("salio mal :)")
+                    })
+            })
+        </Script>
+    </body>
+</html>

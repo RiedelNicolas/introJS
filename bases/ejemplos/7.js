@@ -5,7 +5,7 @@
 // Que es el asincronismo?
 // Es cuando una tarea tarda un tiempo en completarse, y no podemos esperar a que termine para seguir con el resto del programa.
 
-const pokemonURL = "https://pokeapi.com/api/v2/pokemon/1";
+const pokemonURL = "https://pokeapi.co/api/v2/pokemon/1";
 
 const GetPokemon = (url) => {
     return fetch(url)
@@ -13,17 +13,25 @@ const GetPokemon = (url) => {
 
 
 //Ejemplo con promesas
+GetPokemon(pokemonURL).then((response)=> {
+    return response.json();
+}).then((data) => {
+    data.species.name;
+}).catch( (error) => {
+    console.log("salio mal :)")
+})
 
-GetPokemon(pokemonURL)
-    .then((response) => {
-        return response.json();
-    })
-    .then((data) => {
-        console.log("Correctamente recibido el pokemon", data?.species?.name);
-    })
-    .catch((error) => {
-        console.error("Error al recibir el pokemon", error);
-    });
+
+
+    // .then((response) => {
+    //     return response.json();
+    // })
+    // .then((data) => {
+    //     console.log("Correctamente recibido el pokemon", data?.species?.name);
+    // })
+    // .catch((error) => {
+    //     console.error("Error al recibir el pokemon", error);
+    // });
 
 //Ejemplo con async/await
 // const GetPokemonAsync = async (url) => {
